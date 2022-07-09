@@ -11,6 +11,9 @@ class User < ApplicationRecord
   validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
   validates :introduction, length: { maximum: 50 }
 
+  def already_favorited?(book)
+    self.favorites.exists?(book_id: book.id)
+  end
 
 
   def get_profile_image
