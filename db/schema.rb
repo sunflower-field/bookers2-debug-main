@@ -41,6 +41,9 @@ ActiveRecord::Schema.define(version: 2022_07_09_102508) do
   end
 
   create_table "book_comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "book_id"
+    t.text "book_comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
